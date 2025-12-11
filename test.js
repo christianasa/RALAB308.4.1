@@ -1,5 +1,4 @@
 // Part 1-----------------------------------------------------------------------------------------------------
-// Refactoring Old Code
 
 let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
 
@@ -44,64 +43,59 @@ for (let i = 0; i < str.length; i++) {
 
     //Check if its the last index of loop.
     if (i == str.length - 1) {
-        
+        //if so, print last row
         console.log(cell1, cell2, cell3, cell4);
     }
 }
 
 // Part 2 -------------------------------------------------------------------------------------------------------------------
-// Expanding Functionality
-//becomes
-//[["ID", "Name", "Occupation", "Age"],
- //["42", "Bruce", "Knight", "41"],
- //["57", "Bob", "Fry Cook", "19"],
- //["63", "Blaine", "Quiz Master", "58"],
- //["98", "Bill", "Doctor’s Assistant", "26"]]
+// Convert string to 2D array
 
-
+// Step 1: Split the string by newlines (\n) to get an array of rows
 let rows = str.split('\n');
-console.log(",", rows);
+console.log("Step 1 - Rows:", rows);
 
-
+// Step 2: Create an empty array to store the 2D array
 let array2D = [];
 
+// Step 3: Loop through each row
 for (let i = 0; i < rows.length; i++) {
-
+    // Step 4: Split each row by commas to get individual cells
     let cells = rows[i].split(',');
 
+    // Step 5: Add the array of cells to our 2D array
     array2D.push(cells);
 }
 
-console.log(",", array2D);
+console.log("Step 2 - 2D Array:", array2D);
 
-// Part 3 --------------------------------------------------------------------------------------------------------------------
-// Transforming Data
+// Part 3 -------------------------------------------------------------------------------------------------------------------
+// Convert 2D array to array of objects
 
+// Get the headers
 let headers = array2D[0];
 console.log(",", headers);
 
+// Make an empty array
 let arrayOfObjects = [];
 
-
+//  Loop 
 for (let i = 1; i < array2D.length; i++) {
-
+    //  Get the current row
     let row = array2D[i];
     console.log(",", row);
 
 
     let obj = {};
 
-   
+
     for (let j = 0; j < row.length; j++) {
-       
+
         let key = headers[j].toLowerCase();
         let value = row[j];
-
         obj[key] = value;
     }
-
     arrayOfObjects.push(obj);
     console.log(",", obj);
 }
-
 console.log(",", arrayOfObjects);
