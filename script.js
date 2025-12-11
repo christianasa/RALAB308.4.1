@@ -11,7 +11,7 @@ let cell4 = "";
 // Cells track of commas / cells
 let commas = 0;
 
-// Looped over entire string.
+// Looped entire string
 for (let i = 0; i < str.length; i++) {
     //Saving value current char at the current index into a variable to make easier to use.
     let current = str[i];
@@ -41,8 +41,7 @@ for (let i = 0; i < str.length; i++) {
             cell4 += current;
         }
     }
-
-    //Check if its the last index of loop.
+// ABT
     if (i == str.length - 1) {
         
         console.log(cell1, cell2, cell3, cell4);
@@ -105,3 +104,43 @@ for (let i = 1; i < array2D.length; i++) {
 }
 
 console.log(",", arrayOfObjects);
+
+//Part Four
+// 1. Remove the last element from the sorted array
+
+
+console.log("Before removing Bill:", arrayOfObjects);
+
+// Remove the last element
+arrayOfObjects.pop();
+
+console.log("After removing Bill:", arrayOfObjects);
+
+// 2. Insert the following object at index 1:
+// { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+
+// Insert the object at index 1
+arrayOfObjects.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+
+console.log("After inserting Barry:", arrayOfObjects);
+
+
+// Add the following object to the end of the array:
+// { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+
+arrayOfObjects.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+console.log("After adding Bilbo:", arrayOfObjects);
+
+
+// Part Five
+// As a final task, transform the final set of data back into CSV format.
+
+let header = Object.keys(arrayOfObjects[0]);
+let firstString = header.join(",") + "\n";
+
+firstString += arrayOfObjects.map(obj => {
+    return header.map(h => obj[h]).join(",");
+}).join("\n");
+
+console.log(firstString);
