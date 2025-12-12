@@ -1,4 +1,4 @@
-// Part 1-----------------------------------------------------------------------------------------------------
+// Part 1--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Refactoring Old Code
 
 let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
@@ -48,7 +48,7 @@ for (let i = 0; i < str.length; i++) {
     }
 }
 
-// Part 2 -------------------------------------------------------------------------------------------------------------------
+// Part 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Expanding Functionality
 //becomes
 //[["ID", "Name", "Occupation", "Age"],
@@ -73,8 +73,13 @@ for (let i = 0; i < rows.length; i++) {
 
 console.log(",", array2D);
 
-// Part 3 --------------------------------------------------------------------------------------------------------------------
+// Part 3 -----------------------------------------------------------------------------------------------------------------------------------------------------
 // Transforming Data
+// becomes [["ID", "Name", "Occupation", "Age"],
+//  ["42", "Bruce", "Knight", "41"],
+//  ["57", "Bob", "Fry Cook", "19"],
+//  ["63", "Blaine", "Quiz Master", "58"],
+//  ["98", "Bill", "Doctor’s Assistant", "26"]]
 
 let headers = array2D[0];
 console.log(",", headers);
@@ -105,13 +110,13 @@ for (let i = 1; i < array2D.length; i++) {
 
 console.log(",", arrayOfObjects);
 
-//Part Four
+//Part Four ---------------------------------------------------------------------------------------------------------------------------------------------------------
 // 1. Remove the last element from the sorted array
 
 
 console.log("Before removing Bill:", arrayOfObjects);
 
-// Remove the last element
+
 arrayOfObjects.pop();
 
 console.log("After removing Bill:", arrayOfObjects);
@@ -125,7 +130,7 @@ arrayOfObjects.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age
 console.log("After inserting Barry:", arrayOfObjects);
 
 
-// Add the following object to the end of the array:
+// 3. Add the following object to the end of the array:
 // { id: "7", name: "Bilbo", occupation: "None", age: "111" }
 
 arrayOfObjects.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
@@ -133,7 +138,7 @@ arrayOfObjects.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
 console.log("After adding Bilbo:", arrayOfObjects);
 
 
-// Part Five
+// Part Five---------------------------------------------------------------------------------------------------------------------------------------------------
 // As a final task, transform the final set of data back into CSV format.
 
 let header = Object.keys(arrayOfObjects[0]);
